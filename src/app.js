@@ -5,19 +5,19 @@ import cookieParser from "cookie-parser"
 const app = express()
 
 // Setting up CORS middleware
-// const corsOrigin = process.env.CORS_ORIGIN;
+const corsOrigin = process.env.CORS_ORIGIN || process.env.VITE_URL || "*";
 
-// app.use(cors({
-//     origin : corsOrigin,
-//     credentials: true
-// }))
+app.use(cors({
+    origin : corsOrigin,
+    credentials: true
+}))
 
-const corsOptions = {
-  origin: 'https://auth-system-frontend-peach.vercel.app',
-  credentials: true, 
-};
+// const corsOptions = {
+//   origin: 'https://auth-system-frontend-peach.vercel.app',
+//   credentials: true, 
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
