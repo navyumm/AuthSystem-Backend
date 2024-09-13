@@ -13,7 +13,7 @@ const app = express()
 // }))
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: 'https://auth-system-frontend-peach.vercel.app',
   credentials: true, 
 };
 
